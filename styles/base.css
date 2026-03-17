@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    --title-font: "Bebas Neue", sans-serif;
+    --text-font: "Open Sans", sans-serif;
+}
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -8,6 +15,12 @@
 
 body{
     min-height: 100dvh;
+    font-family: var(--text-font);
+}
+
+h1, h2, h3{
+    font-family: var(--title-font);
+    font-weight: 599;
 }
 
 img{
