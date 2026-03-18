@@ -28,7 +28,35 @@ function activeHeader()
     })
 }
 
+function productFilter()
+{
+    const categories = document.querySelectorAll(".category")
+    const products = document.querySelectorAll(".product-card") 
+
+    for(let i = 0; i < categories.length; i++){
+        categories[i].addEventListener("click", function(){
+            for(let j = 0; j < categories.length; j++){
+                categories[j].classList.remove("active")
+            }
+            this.classList.add("active")
+
+            let dataFilter = this.getAttribute("data-filter")
+
+            for(let k = 0; k < products.length; k++){
+                products[k].classList.remove("active")
+                products[k].classList.add("hide")
+
+                if(products[k].getAttribute("data-item") == dataFilter || dataFilter == "all"){
+                    products[k].classList.remove("hide")
+                    products[k].classList.add("active")      
+                }
+            }
+        })
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     toggleSideMenu()
     activeHeader()
+    productFilter()
 })
