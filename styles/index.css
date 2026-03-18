@@ -9,6 +9,24 @@
     z-index: 999;
 }
 
+.login-screen{
+    position: fixed;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+.login-screen form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.login-screen form input{
+    width: 100%;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
