@@ -10,12 +10,47 @@
 }
 
 .login-screen{
+    display: none;
     position: fixed;
-    width: 90%;
+    width: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 2rem;
+    text-align: center;
     background-color: #fff;
+    z-index: 9999;
+}
+.login-screen.active{
+    display: block;
+}
+.login-screen h2{
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+}
+.login-screen p{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.login-screen .exit-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+}
+.login-screen .exit-btn span{
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+.login-screen .exit-btn span:nth-child(1){
+    transform: rotate(45deg) translateY(6px);
+}
+.login-screen .exit-btn span:nth-child(2){
+    transform: rotate(-45deg) translateY(-7px);
 }
 .login-screen form{
     display: flex;
@@ -25,6 +60,25 @@
 }
 .login-screen form input{
     width: 100%;
+    padding: .5rem 1rem;
+    margin-block: .2rem;
+}
+.login-screen form input[type=checkbox]{
+    width: 20px;
+    margin-block: .5rem 1rem;
+}
+.login-screen form span label{
+    font-size: .9rem;
+    text-transform: capitalize;
+}
+.login-screen form button{
+    width: 100%;
+    padding: .7rem 1rem;
+    margin-block: .2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
 }
 
 .header{
@@ -174,12 +228,20 @@
 }
 
 @media screen and (min-width: 344px) and (max-width: 412px){
+    .login-screen{
+        width: 90%;
+    }
+
     .products{
         grid-template-columns: 1fr;
     }
 }
 
 @media screen and (min-width: 768px){
+    .login-screen{
+        width: 50%;
+    }
+
     .header{
         padding: .5rem 2rem;
     }
@@ -204,6 +266,10 @@
 }
 
 @media screen and (min-width: 1200px){
+    .login-screen{
+        width: 30%;
+    }
+
     .hero{
         height: 160dvh;
     }

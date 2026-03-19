@@ -1,9 +1,28 @@
 const header = document.querySelector(".header")
+const overlay = document.querySelector(".overlay")
+
+function activeLoginScreen()
+{
+    const options = document.querySelectorAll(".option")
+    const loginScreen = document.querySelector(".login-screen")
+    const exitBtn = document.querySelector(".exit-btn")
+
+    options.forEach(op => {
+        op.addEventListener("click", () => {
+            loginScreen.classList.add("active")
+            overlay.classList.add("active")
+        })
+    })
+
+    exitBtn.addEventListener("click", () => {
+        loginScreen.classList.remove("active")
+        overlay.classList.remove("active")
+    })
+}
 
 function toggleSideMenu(){
     const menuIcon = document.querySelector(".menu-icon")
     const sideMenu = document.querySelector(".side-menu")
-    const overlay = document.querySelector(".overlay")
 
     menuIcon.addEventListener("click", () => {
         menuIcon.classList.toggle("active")
@@ -56,6 +75,7 @@ function productFilter()
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    activeLoginScreen()
     toggleSideMenu()
     activeHeader()
     productFilter()
