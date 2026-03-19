@@ -1,23 +1,17 @@
 const header = document.querySelector(".header")
 const overlay = document.querySelector(".overlay")
 
-function activeLoginScreen()
+let menuOpen = false
+let loginOpen = false
+
+function uptadeOverlay()
 {
-    const options = document.querySelectorAll(".option")
-    const loginScreen = document.querySelector(".login-screen")
-    const exitBtn = document.querySelector(".exit-btn")
-
-    options.forEach(op => {
-        op.addEventListener("click", () => {
-            loginScreen.classList.add("active")
-            overlay.classList.add("active")
-        })
-    })
-
-    exitBtn.addEventListener("click", () => {
-        loginScreen.classList.remove("active")
+    if(menuOpen || loginOpen){
+        overlay.classList.add("active")
+    }
+    else{
         overlay.classList.remove("active")
-    })
+    }
 }
 
 function toggleSideMenu(){
@@ -27,11 +21,34 @@ function toggleSideMenu(){
     menuIcon.addEventListener("click", () => {
         menuIcon.classList.toggle("active")
         sideMenu.classList.toggle("active")
-        overlay.classList.toggle("active")
+
+        menuOpen = !menuOpen
+        uptadeOverlay()
         
         if(window.scrollY == 0){
             header.classList.toggle("active")
         }
+    })
+}
+
+function activeLoginScreen()
+{
+    const options = document.querySelectorAll(".option")
+    const loginScreen = document.querySelector(".login-screen")
+    const exitBtn = document.querySelector(".exit-btn")
+
+    options.forEach(op => {
+        op.addEventListener("click", () => {
+            loginScreen.classList.add("active")
+            loginOpen = true
+            uptadeOverlay()
+        })
+    })
+
+    exitBtn.addEventListener("click", () => {
+        loginScreen.classList.remove("active")
+        loginOpen = false
+        uptadeOverlay()
     })
 }
 
