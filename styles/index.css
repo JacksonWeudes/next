@@ -24,9 +24,6 @@
 .login-screen.active{
     display: block;
 }
-.login-screen h2{
-    font-size: clamp(2.5rem, 3vw, 3.5rem);
-}
 .login-screen p{
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -140,8 +137,6 @@
     left: 0;
 }
 .side-menu h2{
-    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-    text-transform: uppercase;
     margin-block: 1rem;
     border-bottom: 1px solid;
 }
@@ -150,6 +145,10 @@
     text-transform: capitalize;
     font-size: clamp(1rem, 1vw, 1.3rem);
     margin-block: .5rem;
+    color: #000;
+}
+.side-menu a:hover{
+    text-decoration: underline;
 }
 
 .hero{
@@ -224,7 +223,64 @@
     height: 80%;
 }
 .product-card h3{
-    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.offer-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0.301);
+}
+.offer-display img{
+    object-fit: cover;
+}
+.offer-display .viewport{
+    overflow: hidden;
+    width: 100%;
+}
+.offer-display .track{
+    display: flex;
+    transition: transform .3s ease-in-out;
+}
+.offer-display .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    border: 1px solid;
+}
+.offer-display .card h3{
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.carousel{
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+.carousel button{
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    padding: .5rem;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: transparent;
+}
+.prev, .next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.prev{
+    left: 10px;
+    z-index: 99;
+}
+.next{
+    right: 10px;
 }
 
 @media screen and (min-width: 344px) and (max-width: 412px){
@@ -235,6 +291,7 @@
     .products{
         grid-template-columns: 1fr;
     }
+
 }
 
 @media screen and (min-width: 768px){
@@ -262,6 +319,11 @@
     .products{
         gap: .5rem;
         padding-inline: .5rem;
+    }
+
+    .offers{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

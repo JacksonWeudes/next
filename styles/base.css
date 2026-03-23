@@ -20,7 +20,15 @@ body{
 
 h1, h2, h3{
     font-family: var(--title-font);
-    font-weight: 599;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+h2{
+    font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+}
+
+p{
+    color: hsl(0, 0%, 20%);
 }
 
 img{

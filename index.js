@@ -1,3 +1,4 @@
+// Menu
 const header = document.querySelector(".header")
 const overlay = document.querySelector(".overlay")
 
@@ -91,9 +92,68 @@ function productFilter()
     }
 }
 
+function activeSlider()
+{
+    const track   = document.querySelector(".track")
+    const cards   = document.querySelectorAll(".card")
+    const nextBtn = document.querySelector(".next")
+    const prevBtn = document.querySelector(".prev")
+    const total = cards.length
+    let index = 1
+    let isTransitioning = false
+    
+    const firstClone = cards[0].cloneNode(true)
+    const lastClone  = cards[cards.length - 1].cloneNode(true)
+
+    track.appendChild(firstClone)
+    track.insertBefore(lastClone, track.firstChild)
+
+    function updateCarousel()
+    {
+        track.style.transform = `translateX(-${index * 100}%)`
+    }
+
+    track.addEventListener("transitionend", () => {
+        const allCards = document.querySelectorAll(".card")
+    
+        if(index === allCards.length - 1){
+            track.style.transition = "none"
+            index = 1
+            updateCarousel()
+        } 
+
+        if(index === 0){
+            track.style.transition = "none"
+            index = cards.length - 2
+            updateCarousel()
+        }
+
+        track.offsetHeight
+        track.style.transition = "transform .3s ease-in-out"
+        isTransitioning = false
+    })
+
+    nextBtn.addEventListener("click", () => {
+        if(isTransitioning) return
+        isTransitioning = true
+        index++
+        updateCarousel()
+    })
+
+    prevBtn.addEventListener("click", () => {
+        if(isTransitioning) return
+        isTransitioning = true
+        index--
+        updateCarousel()  
+    })
+
+    updateCarousel()
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     activeLoginScreen()
     toggleSideMenu()
     activeHeader()
     productFilter()
+    activeSlider()
 })
