@@ -91,7 +91,6 @@
 .header.active{
     background-color: #fff;
 }
-
 .header .menu-icon{
     display: flex;
     flex-direction: column;
@@ -162,6 +161,9 @@
 .highlights h2{
     font-size: clamp(2rem, 3vw, 3rem);
 }
+.highlights h2, p{
+    text-align: center;
+}
 .highlights ul{
     display: flex;
     justify-content: center;
@@ -170,8 +172,7 @@
     padding-block: 1rem;
     margin-block: 1rem;
     list-style: none;
-    background-color: #000;
-    color: #fff;
+
 }
 .highlights .category{
     position: relative;
@@ -190,7 +191,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #fff;
+    background-color: #000;
     transition: width .3s ease-in-out;
 }
 .highlights .category.active::after{
@@ -226,12 +227,19 @@
     font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
+.offers{
+    border: 1px solid;
+}
+.offers img{
+    object-fit: cover;
+}
+
 .offer-display{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 0, 0, 0.301);
+    padding-block: 2rem;
 }
 .offer-display img{
     object-fit: cover;
@@ -250,7 +258,6 @@
     justify-content: center;
     align-items: center;
     min-width: 100%;
-    border: 1px solid;
 }
 .offer-display .card h3{
     font-size: clamp(2rem, 3vw, 3rem);
@@ -281,6 +288,37 @@
 }
 .next{
     right: 10px;
+}
+
+.quote{
+    padding: 5rem 1rem;
+    padding-inline: 1rem;
+}
+.quote a{
+    font-family: var(--title-font);
+    font-size: clamp(3rem, 6vw, 15rem);
+    font-weight: bold;
+    color: #000;
+}
+
+.time-line{
+    border: 1px solid;
+    padding-block: 1rem;
+}
+.time-line .time-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+    width: 60%;
+    height: 150px;
+    padding: 1rem;
+    margin: auto;
+    margin-block: 1rem;
+    border: 1px solid;
+}
+.time-line .time-card h3{
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
 }
 
 @media screen and (min-width: 344px) and (max-width: 412px){
@@ -316,14 +354,53 @@
         margin-bottom: 1rem;
     }
 
+    .highlights h2, p{
+        padding-inline: 2rem;
+    }
+
     .products{
         gap: .5rem;
-        padding-inline: .5rem;
+        padding-inline: 2rem;
     }
 
     .offers{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+    .offers img{
+        object-fit: cover;
+    }
+
+    .offer-display{
+        position: relative;
+        padding: 0;
+    }
+    .offer-display h2{
+        position: absolute;
+        top: 13%;
+    }
+    .offer-display p{
+        position: absolute;
+        top: 19%;
+    }
+
+    .carousel{
+        width: 70%;
+        margin: auto;
+    }
+    .carousel p{
+        position: static;
+    }
+
+    .about{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about .quote{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 

@@ -119,13 +119,13 @@ function activeSlider()
         if(index === allCards.length - 1){
             track.style.transition = "none"
             index = 1
-            updateCarousel()
+            track.style.transform = `translateX(-${index * 100}%)`
         } 
 
         if(index === 0){
             track.style.transition = "none"
-            index = cards.length - 2
-            updateCarousel()
+            index = allCards.length - 2
+            track.style.transform = `translateX(-${index * 100}%)`
         }
 
         track.offsetHeight
