@@ -5,6 +5,11 @@
 :root{
     --title-font: "Bebas Neue", sans-serif;
     --text-font: "Open Sans", sans-serif;
+
+    --background: hsl(206, 47%, 97%);
+    --cards: hsl(216, 100%, 99%);
+    --borders: hsl(203, 6%, 65%);
+    --black: hsl(214, 12%, 12%);
 }
 
 *{
@@ -16,6 +21,8 @@
 body{
     min-height: 100dvh;
     font-family: var(--text-font);
+    background-color: var(--background);
+    color: var(--black);
 }
 
 h1, h2, h3{

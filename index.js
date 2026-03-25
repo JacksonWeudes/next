@@ -1,4 +1,3 @@
-// Menu
 const header = document.querySelector(".header")
 const overlay = document.querySelector(".overlay")
 
@@ -98,6 +97,7 @@ function activeSlider()
     const cards   = document.querySelectorAll(".card")
     const nextBtn = document.querySelector(".next")
     const prevBtn = document.querySelector(".prev")
+    
     const total = cards.length
     let index = 1
     let isTransitioning = false
