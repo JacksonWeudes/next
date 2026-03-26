@@ -92,6 +92,7 @@
 .header.active{
     background-color: var(--cards);
     box-shadow: 1px 1px 5px 2px #00000027;
+    color: var(--black);
 }
 .header .menu-icon{
     display: flex;
@@ -154,13 +155,24 @@
 
 .hero{
     height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0;
+    padding-inline: 1rem;
+    background: url(../imgs/img1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: var(--cards);
+}
+.hero h1{
+    font-size: clamp(5rem, 13vw, 16rem);
+    line-height: 1;
 }
 
 .highlights{
-    padding-block: 2rem;
-}
-.highlights h2{
-    font-size: clamp(2rem, 3vw, 3rem);
+    padding-block: 5rem;
 }
 .highlights h2, p{
     text-align: center;
@@ -181,7 +193,6 @@
     font-size: clamp(1.5rem, 2vw, 2rem);
     text-transform: uppercase;
     padding: .2rem .5rem;
-    margin-inline: .5rem;
     cursor: pointer;
     transition: width .3s ease-in-out;
 }
@@ -229,7 +240,7 @@
     font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
-.offers img{
+.offers .img{
     object-fit: cover;
 }
 
@@ -308,7 +319,7 @@
 }
 
 .time-line{
-    padding-block: 1rem;
+    padding-block: 5rem;
 }
 .time-line .time-card{
     display: flex;
@@ -335,10 +346,10 @@
     background-position: center center;
 }
 .sub-footer h1{
-    display: inline;
     position: absolute;
     left: 1rem;
     bottom: 0;
+    line-height: 1;
     font-size: clamp(15rem, 30vw, 50rem);
 }
 
@@ -364,6 +375,17 @@
         width: 90%;
     }
 
+    .side-menu{
+        height: 110dvh;
+    }
+
+    .hero{
+        height: 110dvh;
+    }
+    .hero h1{
+        font-size: 4rem;
+    }
+
     .products{
         grid-template-columns: 1fr;
     }
@@ -377,6 +399,18 @@
 
     .header{
         padding: .5rem 2rem;
+    }
+
+    .hero{
+        height: 90dvh;
+        padding-inline: 2rem;
+    }
+
+    .highlights .head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 2rem;
     }
 
     .options a{
@@ -419,7 +453,7 @@
     }
     .offer-display p{
         position: absolute;
-        top: 19%;
+        top: 21%;
     }
 
     .carousel{
@@ -440,6 +474,10 @@
         justify-content: center;
         align-items: center;
     }
+
+    .sub-footer h1{
+        left: 2rem;
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -448,7 +486,7 @@
     }
 
     .hero{
-        height: 160dvh;
+        height: 100dvh;
     }
 
     .products{
